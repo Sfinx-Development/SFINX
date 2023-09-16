@@ -1,5 +1,6 @@
 import { Outlet, NavLink } from "react-router-dom";
 import { Box, AppBar, Toolbar, Link } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -27,12 +28,15 @@ export default function RootLayout() {
           <nav>
             <ul style={{ display: "flex" }}>
               <li>
-                <Box sx={{ marginRight: "0" }}>
-                  <NavLink to="/admin" data-cy="admin-link">
-                    <AdminPanelSettingsIcon
-                      className="cursor-pointer"
-                      fontSize="large"
-                    />
+                <Box sx={{}}>
+                  <NavLink to={" "}>
+                    <MenuIcon
+                      sx={{
+                        flex: "flex",
+                        flexDirection: "row",
+                        fontsize: "large",
+                      }}
+                    ></MenuIcon>
                   </NavLink>
                 </Box>
               </li>
@@ -73,6 +77,9 @@ export default function RootLayout() {
           </Link>
           <Link href="https://www.instagram.com" target="_blank">
             <AccountCircleIcon fontSize="medium" />
+          </Link>
+          <Link href="https://www.instagram.com" target="_blank">
+            <AdminPanelSettingsIcon fontSize="medium" />
           </Link>
         </Box>
       </footer>
