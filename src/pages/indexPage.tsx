@@ -1,15 +1,13 @@
 import { Container} from "@mui/material";
-import LogoText from "../components/logoText.tsx";
-import PersonalDataForm from "../components/personalDataForm.tsx";
+import LogoText from "../components/LogoText.tsx";
+import PersonalDataForm from "../components/PersonalDataForm.tsx";
 
 export default function IndexPage() {
   return (
     <Container
       sx={{
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
+        flexDirection: "column"
       }}
     >
       
