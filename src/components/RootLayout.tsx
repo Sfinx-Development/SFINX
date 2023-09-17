@@ -1,6 +1,6 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Box, AppBar, Toolbar, Link } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+// import MenuIcon from "@mui/icons-material/Menu";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -15,7 +15,33 @@ export default function RootLayout() {
         height: "100vh",
       }}
     >
-      <AppBar
+    <AppBar position="static" style={{ flexDirection: "row", justifyContent: "space-between", backgroundColor: "white" }}>
+      <Toolbar style={{ flex: 1, justifyContent: "space-between", alignItems: "center" }}>
+        <img
+          src="https://i.imgur.com/EUZnDj3.png"
+          alt="logo"
+          style={{ width: 170, height: "auto" }} 
+        />
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Link href="#" color="#000000"  fontSize={22} style={{ margin: " 15px" }}>
+            Start
+          </Link>
+          <Link href="#" color="#000000"  fontSize={22} style={{ margin: " 15px" }}>
+            Kontakt
+          </Link>
+          <Link href="#" color="#000000"  fontSize={22} style={{ margin: " 20px" }}>
+            Samarbeten
+          </Link>
+          <Link href="#" color="#000000"  fontSize={22} style={{ margin: " 15px" }}>
+            Kund konto
+          </Link>
+        </div>
+      </Toolbar>
+    </AppBar>
+ 
+
+
+      {/* <AppBar
         position="static"
         sx={{
           backgroundColor: "white",
@@ -30,20 +56,14 @@ export default function RootLayout() {
               <li>
                 <Box sx={{}}>
                   <NavLink to={" "}>
-                    <MenuIcon
-                      sx={{
-                        flex: "flex",
-                        flexDirection: "row",
-                        fontsize: "large",
-                      }}
-                    ></MenuIcon>
+                 
                   </NavLink>
                 </Box>
               </li>
             </ul>
           </nav>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
 
       <main style={{ display: "flex", flex: "1", flexDirection: "column" }}>
         <Outlet />
