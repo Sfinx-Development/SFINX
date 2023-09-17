@@ -1,8 +1,8 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import CompanyForm from "../components/CompanyForm.tsx";
 import FormStepper from "../components/FormStepper.tsx";
 import LogoText from "../components/LogoText.tsx";
 import PersonalDataForm from "../components/PersonalDataForm.tsx";
-import CompanyForm from "../components/CompanyForm.tsx";
 
 export default function IndexPage() {
   return (
@@ -10,11 +10,17 @@ export default function IndexPage() {
       sx={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
       }}
     >
       {/* HÄR FÅR VI DÅ LÄGGA IN DE FÄLTEN SOM ÄR IFYLLDA TILL CUSTOMERCONTEXT VID SUBMIT INNAN NÄSTA FORM */}
 
       <LogoText />
+
+      <Typography sx={{ fontSize: 25, color: "#4dabf5", mb: 4 }}>
+        Kontakta oss med din idé
+      </Typography>
+
       <FormStepper
         steps={[
           { title: "Uppgifter", form: PersonalDataForm },
