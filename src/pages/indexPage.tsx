@@ -3,6 +3,7 @@ import CompanyForm from "../components/CompanyForm.tsx";
 import FormStepper from "../components/FormStepper.tsx";
 import LogoText from "../components/LogoText.tsx";
 import PersonalDataForm from "../components/PersonalDataForm.tsx";
+import ClientIdeaForm from "../components/ClientIdeaForm.tsx";
 
 export default function IndexPage() {
   return (
@@ -24,7 +25,8 @@ export default function IndexPage() {
       <FormStepper
         steps={[
           { title: "Uppgifter", form: PersonalDataForm },
-          { title: "Företag", form: CompanyForm },
+          { title: "Företag eller privatperson", form: CompanyForm },
+          { title: "Beskriv din idé", form: ClientIdeaForm },
         ]}
       />
     </Container>
