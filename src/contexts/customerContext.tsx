@@ -7,6 +7,13 @@ export type Customer = {
   city: string;
   email: string;
   phone: string;
+  isCompany: boolean;
+  companyName: string;
+  companyDescription: string;
+  purposeWebsite: string;
+  targetGroup: string;
+  budgetDescription: string;
+  extraDescription: string;
 };
 
 type CustomerContextType = {
@@ -27,6 +34,13 @@ export function CustomerProvider({ children }: { children: ReactNode }) {
     city: "",
     email: "",
     phone: "",
+    isCompany: false,
+    companyName: "",
+    companyDescription: "",
+    purposeWebsite: "",
+    targetGroup: "",
+    budgetDescription: "",
+    extraDescription: "",
   });
 
   const resetCustomer = () =>
@@ -37,6 +51,13 @@ export function CustomerProvider({ children }: { children: ReactNode }) {
       city: "",
       email: "",
       phone: "",
+      isCompany: false,
+      companyName: "",
+      companyDescription: "",
+      purposeWebsite: "",
+      targetGroup: "",
+      budgetDescription: "",
+      extraDescription: "",
     });
 
   return (

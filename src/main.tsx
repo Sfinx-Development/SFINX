@@ -14,15 +14,15 @@ import IndexPage from "./pages/indexPage";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
-      <CustomerProvider>
-        <Route index element={<IndexPage />}></Route>
-      </CustomerProvider>
+      <Route index element={<IndexPage />}></Route>
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CustomerProvider>
+      <RouterProvider router={router} />
+    </CustomerProvider>
   </React.StrictMode>
 );

@@ -1,6 +1,8 @@
 import { Box, TextField } from "@mui/material";
+import { useCustomerContext } from "../contexts/customerContext";
 
 export default function PersonalDataForm() {
+  const { customer, setCustomer } = useCustomerContext();
   return (
     <Box
       display={"flex"}
@@ -20,18 +22,28 @@ export default function PersonalDataForm() {
         <TextField
           label="Förnamn och efternamn"
           sx={{ marginBottom: 2, background: "white" }}
+          value={customer.name}
+          onChange={(e) => setCustomer({ ...customer, name: e.target.value })}
         />
         <TextField
           label="Email"
           sx={{ marginBottom: 2, background: "white" }}
+          value={customer.email}
+          onChange={(e) => setCustomer({ ...customer, email: e.target.value })}
         />
         <TextField
           label="Telefonnummer"
           sx={{ marginBottom: 2, background: "white" }}
+          value={customer.phone}
+          onChange={(e) => setCustomer({ ...customer, phone: e.target.value })}
         />
         <TextField
           label="Adress"
           sx={{ marginBottom: 2, background: "white" }}
+          value={customer.address}
+          onChange={(e) =>
+            setCustomer({ ...customer, address: e.target.value })
+          }
         />
         {/* <Button>Fortsätt</Button> */}
       </form>
