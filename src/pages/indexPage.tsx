@@ -17,7 +17,7 @@ export default function IndexPage() {
 
       <LogoText />
 
-      <Typography sx={{ fontSize: 25, color: "#4dabf5", mb: 4 }}>
+      <Typography sx={{ fontSize: 25, color: "#2196f3", mb: 4 }}>
         Kontakta oss med din idé
       </Typography>
 
