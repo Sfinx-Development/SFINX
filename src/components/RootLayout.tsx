@@ -35,7 +35,7 @@ export default function RootLayout() {
           <img
             src="https://i.imgur.com/EUZnDj3.png"
             alt="logo"
-            style={{ width: 170, height: "auto" }}
+            style={{ width: 100, height: "auto" }}
           />
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link
