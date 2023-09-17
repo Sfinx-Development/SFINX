@@ -1,23 +1,40 @@
-import { Box, Typography, TextField, Button} from "@mui/material";
+import { Box, TextField } from "@mui/material";
 
-export default function PersonalDataForm(){
-
-
-    return (
-        <Box
-        display={"flex"}
-        flexDirection={"column"}
-        alignItems={"center"}
-        marginTop={2}
+export default function PersonalDataForm() {
+  return (
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      alignItems={"center"}
+      marginTop={2}
+    >
+      {/* <Typography variant={"h6"}>Dina uppgifter</Typography> */}
+      <form
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "40%",
+          marginBottom: 2,
+        }}
       >
-        <Typography variant={"h6"}>Kontakt oss med din idé</Typography>
-        <form style={{ display: "flex", flexDirection: "column" }}>
-          <TextField label="Förnamn och efternamn" />
-          <TextField label="Email" />
-          <TextField label="Telefonnummer" />
-          <TextField label="Adress" />
-          <Button>Fortsätt</Button>
-        </form>
-      </Box>
-    )
+        <TextField
+          label="Förnamn och efternamn"
+          sx={{ marginBottom: 2, background: "white" }}
+        />
+        <TextField
+          label="Email"
+          sx={{ marginBottom: 2, background: "white" }}
+        />
+        <TextField
+          label="Telefonnummer"
+          sx={{ marginBottom: 2, background: "white" }}
+        />
+        <TextField
+          label="Adress"
+          sx={{ marginBottom: 2, background: "white" }}
+        />
+        {/* <Button>Fortsätt</Button> */}
+      </form>
+    </Box>
+  );
 }
