@@ -12,7 +12,7 @@ export default function Logotext() {
     >
       <CardMedia
         component="img"
-        image="https://i.imgur.com/Gq44YL5.png"
+        image="https://i.imgur.com/LhS6W9o.png"
         alt="logo"
         sx={{
           margin: 0,
