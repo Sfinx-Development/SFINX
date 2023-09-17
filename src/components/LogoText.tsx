@@ -12,12 +12,12 @@ export default function Logotext() {
     >
       <CardMedia
         component="img"
-        image="https://i.imgur.com/LhS6W9o.png"
+        image="https://i.imgur.com/UNlANF3.png"
         alt="logo"
         sx={{
           margin: 0,
           padding: 0,
-          width: 600,
+          width: 500,
           height: "auto",
         }}
       />
