@@ -22,7 +22,7 @@ export default function FormStepper(props: Props) {
 
   const handleNext = () => {
     if (activeStep === steps.length - 1) {
-      setCompleted(true); // Markera som klar om användaren är på sista steget
+      setCompleted(true);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
