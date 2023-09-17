@@ -18,9 +18,14 @@ interface Props {
 export default function FormStepper(props: Props) {
   const { steps } = props;
   const [activeStep, setActiveStep] = React.useState(0);
+  const [completed, setCompleted] = React.useState(false);
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep === steps.length - 1) {
+      setCompleted(true); // Markera som klar om användaren är på sista steget
+    } else {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
   };
 
   const handleBack = () => {
@@ -30,51 +35,69 @@ export default function FormStepper(props: Props) {
   const FormComponent = steps[activeStep].form;
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <Stepper activeStep={activeStep} alternativeLabel>
-        {steps.map((step) => (
-          <Step key={step.title}>
-            <StepLabel>{step.title}</StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-      <div>
-        {activeStep === steps.length ? (
+    <Box
+      sx={{
+        width: "100%",
+      }}
+    >
+      {!completed ? (
+        <div>
+          <Stepper activeStep={activeStep} alternativeLabel>
+            {steps.map((step) => (
+              <Step key={step.title}>
+                <StepLabel>{step.title}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
           <div>
-            <Typography component="div" sx={{ mt: 2 }}>
-              <Typography variant="h6" gutterBottom>
-                Alla steg är klara
-              </Typography>
-              <Typography variant="body1">
-                Visa någon form av avslutningsmeddelande här.
-              </Typography>
-            </Typography>
+            {activeStep === steps.length ? (
+              <div>
+                <Typography component="div" sx={{ mt: 2 }}>
+                  <Typography variant="h6" gutterBottom>
+                    Alla steg är klara
+                  </Typography>
+                  <Typography variant="body1">
+                    Visa någon form av avslutningsmeddelande här.
+                  </Typography>
+                </Typography>
+              </div>
+            ) : (
+              <div>
+                <FormComponent />
+                <Box
+                  sx={{
+                    mb: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Button
+                    disabled={activeStep === 0}
+                    onClick={handleBack}
+                    sx={{ mr: 1, fontSize: 15 }}
+                  >
+                    Tillbaka
+                  </Button>
+                  <Button onClick={handleNext} sx={{ fontSize: 15 }}>
+                    {activeStep === steps.length - 1 ? "Klar" : "Nästa"}
+                  </Button>
+                </Box>
+              </div>
+            )}
           </div>
-        ) : (
-          <div>
-            <FormComponent />
-            <Box
-              sx={{
-                mb: 2,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Button
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                sx={{ mr: 1, fontSize: 15 }}
-              >
-                Tillbaka
-              </Button>
-              <Button onClick={handleNext} sx={{ fontSize: 15 }}>
-                {activeStep === steps.length - 1 ? "Klar" : "Nästa"}
-              </Button>
-            </Box>
-          </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography>Vi hör av oss till dig inom 3 dagar.</Typography>
+        </div>
+      )}
     </Box>
   );
 }
