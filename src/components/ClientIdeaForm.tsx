@@ -19,11 +19,19 @@ export default function ClientIdeaForm() {
         }}
       >
         <TextField
-          label="Vad är syftet med webbsidan?"
+          label="Vad är syftet med applikationen?"
           sx={{ marginBottom: 2, background: "white" }}
-          value={customer.purposeWebsite}
+          value={customer.purposeApp}
           onChange={(e) =>
-            setCustomer({ ...customer, purposeWebsite: e.target.value })
+            setCustomer({ ...customer, purposeApp: e.target.value })
+          }
+        />
+        <TextField
+          label="Vad är det för typ av applikation (webbsida, mobilapp, systemapp)?"
+          sx={{ marginBottom: 2, background: "white" }}
+          value={customer.typeOfApp}
+          onChange={(e) =>
+            setCustomer({ ...customer, typeOfApp: e.target.value })
           }
         />
         <TextField

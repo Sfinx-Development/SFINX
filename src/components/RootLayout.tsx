@@ -39,36 +39,40 @@ export default function RootLayout() {
           />
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link
-              href="#"
+              href="/"
               color="#000000"
               fontSize={22}
               style={{ margin: " 15px" }}
+              underline="none"
             >
               Start
             </Link>
             <Link
-              href="#"
+              href="aboutus"
               color="#000000"
               fontSize={22}
               style={{ margin: " 15px" }}
+              underline="none"
             >
-              Kontakt
+              Om oss
             </Link>
-            <Link
+            {/* <Link
               href="#"
               color="#000000"
               fontSize={22}
               style={{ margin: " 20px" }}
+              underline="none"
             >
               Samarbeten
-            </Link>
+            </Link> */}
             <Link
-              href="#"
+              href="portfolie"
               color="#000000"
               fontSize={22}
               style={{ margin: " 15px" }}
+              underline="none"
             >
-              Kund konto
+              Portfolie
             </Link>
           </div>
         </Toolbar>

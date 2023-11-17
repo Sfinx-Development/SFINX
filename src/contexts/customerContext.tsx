@@ -10,7 +10,8 @@ export type Customer = {
   isCompany: boolean;
   companyName: string;
   companyDescription: string;
-  purposeWebsite: string;
+  typeOfApp: string;
+  purposeApp: string;
   targetGroup: string;
   budgetDescription: string;
   extraDescription: string;
@@ -37,7 +38,8 @@ export function CustomerProvider({ children }: { children: ReactNode }) {
     isCompany: false,
     companyName: "",
     companyDescription: "",
-    purposeWebsite: "",
+    purposeApp: "",
+    typeOfApp: "",
     targetGroup: "",
     budgetDescription: "",
     extraDescription: "",
@@ -54,7 +56,8 @@ export function CustomerProvider({ children }: { children: ReactNode }) {
       isCompany: false,
       companyName: "",
       companyDescription: "",
-      purposeWebsite: "",
+      purposeApp: "",
+      typeOfApp: "",
       targetGroup: "",
       budgetDescription: "",
       extraDescription: "",

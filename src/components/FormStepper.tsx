@@ -6,6 +6,7 @@ import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { useCustomerContext } from "../contexts/customerContext";
+import { sendEmail } from "../mailhandeler/nodemailer";
 
 interface StepData {
   title: string;
@@ -25,6 +26,7 @@ export default function FormStepper(props: Props) {
   const handleNext = () => {
     if (activeStep === steps.length - 1) {
       setCompleted(true);
+      sendEmail(customer);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
