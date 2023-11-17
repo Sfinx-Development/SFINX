@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.post("/send-email", async (req, res) => {
+app.post("/api/send-email", async (req, res) => {
   try {
     const { recipient, subject, text } = req.body;
 
