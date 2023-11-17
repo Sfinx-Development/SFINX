@@ -22,7 +22,7 @@ export const sendEmail = async (customer: Customer) => {
     }
     const emailText = `${customerName}\n${customerEmail}\n${customerPhone}\n${customerAddress}\n${customerPurpose}\n${customerTargetGroup}\n${customerApp}\n${customerBudget}\n${customerExtra}\n${isCompany}\n${companyName}\n${companyDescription}`;
 
-    const response = await axios.post("/.netlify/functions/send-email", {
+    const response = await axios.post("/send-email", {
       recipient: "angelinaholmqvist@live.se",
       subject: "En kundförfrågan",
       text: emailText,
