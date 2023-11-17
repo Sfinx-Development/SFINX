@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config();
 
 const transporter = nodemailer.createTransport({
   service: "hotmail",
@@ -38,11 +40,8 @@ export const handler = async function (event) {
     });
 
     console.log("FÖRE SKICKAR MAIL");
-
-    const startTime = new Date().getTime();
     const info = await transporter.sendMail(mailOptions);
-    const endTime = new Date().getTime();
-    console.log("EFTER SKICKAR MAIL", "Tid:", endTime - startTime, "ms");
+    console.log("EFTER SKICKAR MAIL", "Tid:");
 
     // Returnera svar
     return {
