@@ -19,6 +19,7 @@ const transporter = nodemailer.createTransport({
 
 app.post("/api/send-email", async (req, res) => {
   try {
+    console.log("Anrop mottaget till /api/send-email");
     const { recipient, subject, text } = req.body;
 
     const mailOptions = {
