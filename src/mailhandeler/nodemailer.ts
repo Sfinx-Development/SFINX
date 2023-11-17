@@ -23,7 +23,7 @@ export const sendEmail = async (customer: Customer) => {
     const emailText = `${customerName}\n${customerEmail}\n${customerPhone}\n${customerAddress}\n${customerPurpose}\n${customerTargetGroup}\n${customerApp}\n${customerBudget}\n${customerExtra}\n${isCompany}\n${companyName}\n${companyDescription}`;
 
     const response = await axios.post(
-      "https://guileless-unicorn-087c71.netlify.app/send-email",
+      "https://guileless-unicorn-087c71.netlify.app/api/send-email",
       {
         recipient: "angelinaholmqvist@live.se",
         subject: "En kundförfrågan",
