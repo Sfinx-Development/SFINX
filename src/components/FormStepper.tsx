@@ -5,6 +5,8 @@ import StepLabel from "@mui/material/StepLabel";
 import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { useCustomerContext } from "../contexts/customerContext";
+import { sendEmail } from "../mailhandeler/nodemailer";
 
 interface StepData {
   title: string;
@@ -19,10 +21,12 @@ export default function FormStepper(props: Props) {
   const { steps } = props;
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState(false);
+  const { customer } = useCustomerContext();
 
   const handleNext = () => {
     if (activeStep === steps.length - 1) {
       setCompleted(true);
+      sendEmail(customer);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
@@ -95,7 +99,9 @@ export default function FormStepper(props: Props) {
             justifyContent: "center",
           }}
         >
-          <Typography>Vi hör av oss till dig inom 3 dagar.</Typography>
+          <Typography marginBottom={4} variant="h6">
+            Vi hör av oss till {customer.email} inom 3 dagar.
+          </Typography>
         </div>
       )}
     </Box>

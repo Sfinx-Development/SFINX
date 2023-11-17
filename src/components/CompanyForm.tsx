@@ -1,6 +1,9 @@
 import { Box, Checkbox, FormControlLabel, TextField } from "@mui/material";
+import { useCustomerContext } from "../contexts/customerContext";
 
 export default function CompanyForm() {
+  const { customer, setCustomer } = useCustomerContext();
+
   return (
     <Box
       display={"flex"}
@@ -17,16 +20,34 @@ export default function CompanyForm() {
         }}
       >
         <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
-          <FormControlLabel control={<Checkbox />} label="Företag" />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={customer.isCompany}
+                onChange={(event) =>
+                  setCustomer({ ...customer, isCompany: event.target.checked })
+                }
+              />
+            }
+            label="Företag"
+          />
           <FormControlLabel control={<Checkbox />} label="Privatperson" />
         </Box>
         <TextField
-          label="Företagsadress"
+          label="Namn på företag"
           sx={{ marginBottom: 2, background: "white" }}
+          value={customer.companyName}
+          onChange={(e) =>
+            setCustomer({ ...customer, companyName: e.target.value })
+          }
         />
         <TextField
           label="Vad gör ditt företag?"
           sx={{ marginBottom: 2, background: "white" }}
+          value={customer.companyDescription}
+          onChange={(e) =>
+            setCustomer({ ...customer, companyDescription: e.target.value })
+          }
         />
       </form>
     </Box>
