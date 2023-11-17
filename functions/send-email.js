@@ -1,20 +1,19 @@
 import nodemailer from "nodemailer";
 
+const transporter = nodemailer.createTransport({
+  service: "hotmail",
+  auth: {
+    user: "angelinaholmqvist@live.se",
+    pass: "Manasigo0065",
+  },
+});
+
 export const handler = async function (event) {
   try {
     console.log("Anrop mottaget till /api/send-email");
 
     // Läs data från request body
     const { recipient, subject, text } = JSON.parse(event.body);
-
-    // Konfigurera Nodemailer
-    const transporter = nodemailer.createTransport({
-      service: "hotmail",
-      auth: {
-        user: "angelinaholmqvist@live.se",
-        pass: "Manasigo0065",
-      },
-    });
 
     // Konfigurera e-postalternativ
     const mailOptions = {

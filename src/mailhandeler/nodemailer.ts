@@ -28,7 +28,7 @@ export const sendEmail = async (customer: Customer) => {
       text: emailText,
     });
 
-    console.log(response.data.message);
+    console.log("Respnose data message", response.data.message);
   } catch (error) {
     console.error("Nätverksfel:", error);
   }
