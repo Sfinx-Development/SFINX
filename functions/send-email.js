@@ -24,7 +24,9 @@ export const handler = async function (event) {
     };
 
     // Skicka e-post
+    console.log("FÖRE SKICKAR MAIL");
     const info = await transporter.sendMail(mailOptions);
+    console.log("EFTER SKICKAR MAIL");
 
     // Returnera svar
     return {
