@@ -24,7 +24,21 @@ export const handler = async function (event) {
     };
 
     // Skicka e-post
+    transporter.verify((error, success) => {
+      if (error) {
+        console.error("Verifieringsfel:", error);
+      } else {
+        console.log("Transportör verifierad:", success);
+      }
+    });
+
+    // Lägg till debug-logging
+    transporter.on("log", (log) => {
+      console.log(log);
+    });
+
     console.log("FÖRE SKICKAR MAIL");
+
     const startTime = new Date().getTime();
     const info = await transporter.sendMail(mailOptions);
     const endTime = new Date().getTime();
