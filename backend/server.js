@@ -6,7 +6,7 @@ import nodemailer from "nodemailer";
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: "https://guileless-unicorn-087c71.netlify.app" }));
 app.use(bodyParser.json());
 
 const transporter = nodemailer.createTransport({
