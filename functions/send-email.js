@@ -25,8 +25,10 @@ export const handler = async function (event) {
 
     // Skicka e-post
     console.log("FÖRE SKICKAR MAIL");
+    const startTime = new Date().getTime();
     const info = await transporter.sendMail(mailOptions);
-    console.log("EFTER SKICKAR MAIL");
+    const endTime = new Date().getTime();
+    console.log("EFTER SKICKAR MAIL", "Tid:", endTime - startTime, "ms");
 
     // Returnera svar
     return {
