@@ -26,7 +26,7 @@ export const handler = async function (event) {
     // Skicka e-post
     transporter.verify((error, success) => {
       if (error) {
-        console.error("Verifieringsfel:", error);
+        console.log("Verifieringsfel:", error);
       } else {
         console.log("Transportör verifierad:", success);
       }
