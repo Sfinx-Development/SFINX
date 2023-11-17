@@ -1,2 +1,18 @@
 [build]
   functions = "functions"
+
+[dev]
+  functionsPort = 34567 
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  # Lägg till detta för att konfigurera timeout (i sekunder)
+  FUNCTIONS_TIMEOUT = 30
