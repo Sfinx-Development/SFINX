@@ -139,7 +139,10 @@ export default function RootLayout() {
             },
           }}
         >
-          <Link href="https://www.instagram.com" target="_blank">
+          <Link
+            href="https://www.instagram.com/sfinxdevelopment"
+            target="_blank"
+          >
             <InstagramIcon fontSize="medium" />
           </Link>
           <Link href="mailto:sfinxdevelopment@gmail.com" target="_blank">

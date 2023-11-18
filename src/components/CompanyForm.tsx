@@ -11,7 +11,6 @@ export default function CompanyForm() {
       alignItems={"center"}
       marginTop={2}
     >
-      {/* <Typography variant={"h6"}>Om ditt företag</Typography> */}
       <form
         style={{
           display: "flex",

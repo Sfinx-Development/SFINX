@@ -31,22 +31,24 @@ export default function Logotext() {
           position: "relative",
         }}
       >
-        <video
-          autoPlay
-          loop
-          muted
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-            opacity: 0.4,
-          }}
-        >
-          <source src="https://i.imgur.com/xtHSxkW.mp4" type="video/mp4" />
-        </video>
+        {isMobile ? null : (
+          <video
+            autoPlay
+            loop
+            muted
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: -1,
+              opacity: 0.4,
+            }}
+          >
+            <source src="https://i.imgur.com/xtHSxkW.mp4" type="video/mp4" />
+          </video>
+        )}
 
         <Box
           sx={{
