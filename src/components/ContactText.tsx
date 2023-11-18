@@ -1,4 +1,5 @@
-import { Box, CardMedia, Typography } from "@mui/material";
+import { Box, CardMedia, Link, Typography } from "@mui/material";
+import EmailIcon from "@mui/icons-material/Email";
 
 export default function ContactText() {
   const isMobile = window.innerWidth <= 670;
@@ -61,6 +62,9 @@ export default function ContactText() {
             och appar från början samt att gå in i befintliga projekt och bygga
             på fler eller bättre lösningar. Passa på nu för ett billigare pris!
           </Typography>
+          <Link href="mailto:sfinxdevelopment@gmail.com" target="_blank">
+            <EmailIcon fontSize="medium" />
+          </Link>
         </Box>
       </div>
     </div>

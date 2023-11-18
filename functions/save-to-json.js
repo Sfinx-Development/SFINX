@@ -2,26 +2,25 @@ import fs from "fs/promises";
 
 const saveToJSON = async (customer) => {
   try {
-    // Läs befintlig data från filen om den finns
-    let existingData = [];
-    try {
-      const existingDataJson = await fs.readFile("customerData.json", "utf-8");
-      existingData = JSON.parse(existingDataJson);
-    } catch (readError) {
-      // Filen kanske inte finns än, vilket är ok
-    }
+    // Skapa en textrepresentation av kunddata
+    const customerJson = JSON.stringify(customer, null, 2);
 
-    // Lägg till ny kunddata till befintlig data
-    existingData.push(customer);
+    // Kontrollera om filen är tom
+    const fileContent = await fs.readFile("customerData.json", "utf-8");
+    const isArrayEmpty = fileContent.trim() === "";
+
+    // Formatera kunddata som JSON-array
+    const formattedData = isArrayEmpty
+      ? `[${customerJson}]`
+      : `${fileContent.slice(0, -1)},\n${customerJson}]`;
 
     // Skriv tillbaka filen med den nya datan
-    const jsonData = JSON.stringify(existingData, null, 2);
-    await fs.writeFile("customerData.json", jsonData);
+    await fs.writeFile("customerData.json", formattedData);
 
     console.log("Data added to customerData.json");
   } catch (error) {
     console.error("Error saving data:", error);
-    throw error; // Kasta felet så att det fångas upp av funktionens "catch" i handler
+    throw error;
   }
 };
 

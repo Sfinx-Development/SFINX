@@ -50,4 +50,21 @@
     "extraDescription": "",
     "dateCreated": "2023-11-18T12:02:59.287Z"
   }
-]
+,
+{
+  "name": "",
+  "address": "",
+  "zipcode": "",
+  "city": "",
+  "email": "",
+  "phone": "",
+  "isCompany": false,
+  "companyName": "",
+  "companyDescription": "",
+  "purposeApp": "",
+  "typeOfApp": "",
+  "targetGroup": "",
+  "budgetDescription": "",
+  "extraDescription": "",
+  "dateCreated": "2023-11-18T12:19:56.619Z"
+}]
