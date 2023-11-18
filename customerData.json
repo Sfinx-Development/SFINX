@@ -1,0 +1,53 @@
+[
+  {
+    "name": "kkk",
+    "address": "kkk",
+    "zipcode": "",
+    "city": "",
+    "email": "kk",
+    "phone": "kk",
+    "isCompany": false,
+    "companyName": "",
+    "companyDescription": "",
+    "purposeApp": "",
+    "typeOfApp": "",
+    "targetGroup": "",
+    "budgetDescription": "",
+    "extraDescription": "",
+    "dateCreated": "2023-11-18T12:00:26.282Z"
+  },
+  {
+    "name": "kkkk",
+    "address": "kk",
+    "zipcode": "",
+    "city": "",
+    "email": "kk",
+    "phone": "kk",
+    "isCompany": false,
+    "companyName": "",
+    "companyDescription": "",
+    "purposeApp": "jjjj",
+    "typeOfApp": "jjj",
+    "targetGroup": "jjj",
+    "budgetDescription": "jjj",
+    "extraDescription": "",
+    "dateCreated": "2023-11-18T12:01:22.493Z"
+  },
+  {
+    "name": "jjj",
+    "address": "jjj",
+    "zipcode": "",
+    "city": "",
+    "email": "jj",
+    "phone": "jj",
+    "isCompany": false,
+    "companyName": "",
+    "companyDescription": "",
+    "purposeApp": "kkk",
+    "typeOfApp": "kk",
+    "targetGroup": "kk",
+    "budgetDescription": "kkkk",
+    "extraDescription": "",
+    "dateCreated": "2023-11-18T12:02:59.287Z"
+  }
+]

@@ -15,6 +15,7 @@ export type Customer = {
   targetGroup: string;
   budgetDescription: string;
   extraDescription: string;
+  dateCreated: Date;
 };
 
 type CustomerContextType = {
@@ -43,6 +44,7 @@ export function CustomerProvider({ children }: { children: ReactNode }) {
     targetGroup: "",
     budgetDescription: "",
     extraDescription: "",
+    dateCreated: new Date(),
   });
 
   const resetCustomer = () =>
@@ -61,6 +63,7 @@ export function CustomerProvider({ children }: { children: ReactNode }) {
       targetGroup: "",
       budgetDescription: "",
       extraDescription: "",
+      dateCreated: new Date(),
     });
 
   return (

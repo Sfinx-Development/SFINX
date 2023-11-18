@@ -6,7 +6,6 @@ import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { useCustomerContext } from "../contexts/customerContext";
-import { sendEmail } from "../mailhandeler/nodemailer";
 
 interface StepData {
   title: string;
@@ -23,10 +22,25 @@ export default function FormStepper(props: Props) {
   const [completed, setCompleted] = React.useState(false);
   const { customer } = useCustomerContext();
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (activeStep === steps.length - 1) {
       setCompleted(true);
-      sendEmail(customer);
+      // sendEmail(customer);
+      try {
+        const response = await fetch("/.netlify/functions/save-to-json", {
+          method: "POST",
+          body: JSON.stringify(customer),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
