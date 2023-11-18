@@ -1,12 +1,14 @@
 import fs from "fs/promises";
+import path from "path";
 
 const saveToJSON = async (customer) => {
   try {
     // Skapa en textrepresentation av kunddata
     const customerJson = JSON.stringify(customer, null, 2);
-
+    const filePath = path.join(process.cwd(), "customerData.json");
+    console.log("FILVÄG: ", filePath);
     // Kontrollera om filen är tom
-    const fileContent = await fs.readFile("customerData.json", "utf-8");
+    const fileContent = await fs.readFile(filePath, "utf-8");
     const isArrayEmpty = fileContent.trim() === "";
 
     // Formatera kunddata som JSON-array
