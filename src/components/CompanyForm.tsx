@@ -3,7 +3,7 @@ import { useCustomerContext } from "../contexts/customerContext";
 
 export default function CompanyForm() {
   const { customer, setCustomer } = useCustomerContext();
-
+  const isMobile = window.innerWidth <= 670;
   return (
     <Box
       display={"flex"}
@@ -16,7 +16,7 @@ export default function CompanyForm() {
         style={{
           display: "flex",
           flexDirection: "column",
-          width: "40%",
+          width: isMobile ? "80%" : "40%",
         }}
       >
         <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>

@@ -3,6 +3,7 @@ import { useCustomerContext } from "../contexts/customerContext";
 
 export default function PersonalDataForm() {
   const { customer, setCustomer } = useCustomerContext();
+  const isMobile = window.innerWidth <= 670;
   return (
     <Box
       display={"flex"}
@@ -15,7 +16,7 @@ export default function PersonalDataForm() {
         style={{
           display: "flex",
           flexDirection: "column",
-          width: "40%",
+          width: isMobile ? "80%" : "40%",
           marginBottom: 2,
         }}
       >

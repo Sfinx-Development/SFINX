@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Box, AppBar, Toolbar, Link } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 // import MenuIcon from "@mui/icons-material/Menu";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
@@ -43,48 +44,39 @@ export default function RootLayout() {
             }}
           />
           <div style={{ display: "flex", alignItems: "center" }}>
-            <Link
-              href="/"
+            <RouterLink
+              to="/"
               color="#000000"
               style={{
                 fontSize: isMobile ? 18 : 22,
                 margin: isMobile ? "5px" : "15px",
+                textDecoration: "none",
               }}
-              underline="none"
             >
               Start
-            </Link>
-            <Link
-              href="aboutus"
+            </RouterLink>
+            <RouterLink
+              to="/aboutus"
               color="#000000"
               style={{
                 fontSize: isMobile ? 18 : 22,
                 margin: isMobile ? "5px" : "15px",
+                textDecoration: "none",
               }}
-              underline="none"
             >
               Om oss
-            </Link>
-            {/* <Link
-              href="#"
-              color="#000000"
-              fontSize={22}
-              style={{ margin: " 20px" }}
-              underline="none"
-            >
-              Samarbeten
-            </Link> */}
-            <Link
-              href="portfolie"
+            </RouterLink>
+            <RouterLink
+              to="/portfolie"
               color="#000000"
               style={{
                 fontSize: isMobile ? 18 : 22,
                 margin: isMobile ? "5px" : "15px",
+                textDecoration: "none",
               }}
-              underline="none"
             >
               Portfolie
-            </Link>
+            </RouterLink>
           </div>
         </Toolbar>
       </AppBar>
@@ -147,7 +139,7 @@ export default function RootLayout() {
           <Link href="https://www.instagram.com" target="_blank">
             <InstagramIcon fontSize="medium" />
           </Link>
-          <Link href="mailto:Keramika@email.com" target="_blank">
+          <Link href="mailto:sfinxdevelopment@gmail.com" target="_blank">
             <EmailIcon fontSize="medium" />
           </Link>
           <Link href="https://www.instagram.com" target="_blank">
