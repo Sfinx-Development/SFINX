@@ -5,7 +5,7 @@ import StepLabel from "@mui/material/StepLabel";
 import Stepper from "@mui/material/Stepper";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { useCustomerContext } from "../contexts/customerContext";
+import { Customer, useCustomerContext } from "../contexts/customerContext";
 
 interface StepData {
   title: string;
@@ -26,24 +26,39 @@ export default function FormStepper(props: Props) {
     if (activeStep === steps.length - 1) {
       setCompleted(true);
       // sendEmail(customer);
-      try {
-        const response = await fetch("/.netlify/functions/save-to-json", {
-          method: "POST",
-          body: JSON.stringify(customer),
-        });
-
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
+      sendEmailWithLink(customer);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
     }
+  };
+
+  const sendEmailWithLink = (customer: Customer) => {
+    const subject = "Kundkontakt";
+    const customerName = `Kundens namn : ${customer.name}`;
+    const customerEmail = `Kundens email : ${customer.email}`;
+    const customerPhone = `Kundens email : ${customer.phone}`;
+    const customerAddress = `Kundens adress: ${customer.address} ${customer.zipcode} ${customer.city}`;
+    const customerPurpose = `Syfte med applikationen: ${customer.purposeApp}`;
+    const customerApp = `Typ av appplikation: ${customer.typeOfApp}`;
+    const customerTargetGroup = `Målgrupp som vi riktar in oss på: ${customer.targetGroup}`;
+    const customerBudget = `Budget: ${customer.budgetDescription}`;
+    const customerExtra = `Övrigt: ${customer.extraDescription}`;
+
+    const isCompany = `Är företag: ${customer.isCompany ? "ja" : "nej"}`;
+    let companyName = "";
+    let companyDescription = "";
+    if (isCompany) {
+      companyName = `Företagets namn: ${customer.companyName}`;
+      companyDescription = `Företagets beskrivning: ${customer.companyDescription}`;
+    }
+    const body = `${customerName}\n${customerEmail}\n${customerPhone}\n${customerAddress}\n${customerPurpose}\n${customerTargetGroup}\n${customerApp}\n${customerBudget}\n${customerExtra}\n${isCompany}\n${companyName}\n${companyDescription}`;
+
+    const defaultEmail = "sfinxdevelopment@gmail.com";
+    const mailtoLink = `mailto:${defaultEmail}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    // Öppna e-postklienten
+    window.location.href = mailtoLink;
   };
 
   const handleBack = () => {
