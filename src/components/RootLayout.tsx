@@ -8,7 +8,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 
 export default function RootLayout() {
-  const isMobile = window.innerWidth <= 670;
+  const isMobile = window.innerWidth <= 820;
   return (
     <div
       style={{

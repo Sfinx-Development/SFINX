@@ -1,7 +1,7 @@
 import { Box, CardMedia, Typography } from "@mui/material";
 
 export default function ContactText() {
-  const isMobile = window.innerWidth <= 670;
+  const isMobile = window.innerWidth <= 820;
   return (
     <div
       style={{
@@ -31,11 +31,13 @@ export default function ContactText() {
           position: "relative",
         }}
       >
-        {isMobile ? null : (
+        {isMobile ? (
           <video
             autoPlay
             loop
             muted
+            playsInline={true}
+            controls={false}
             style={{
               position: "fixed",
               top: 0,
@@ -43,7 +45,26 @@ export default function ContactText() {
               width: "100%",
               height: "100%",
               zIndex: -1,
-              opacity: 0.4,
+              opacity: 0.3,
+            }}
+          >
+            <source src="https://i.imgur.com/gndLLDE.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline={true}
+            controls={false}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: -1,
+              opacity: 0.2,
             }}
           >
             <source src="https://i.imgur.com/xtHSxkW.mp4" type="video/mp4" />
@@ -57,12 +78,14 @@ export default function ContactText() {
             textAlign: "center",
           }}
         >
-          <Typography variant={"h6"} margin={0} padding={0}>
+          <Typography marginBottom={2} padding={0}>
             Vi är två tjejer som snart är färdiga med vår
             systemutveckling-utbildning. Vi brinner för att både skapa hemsidor
             och appar från början samt att gå in i befintliga projekt och bygga
-            på fler eller bättre lösningar. Passa på nu för ett billigare pris!
+            på fler eller bättre lösningar.
           </Typography>
+
+          <Typography>Passa på nu för ett billigare pris!</Typography>
         </Box>
       </div>
     </div>

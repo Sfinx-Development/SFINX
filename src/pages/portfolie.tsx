@@ -1,7 +1,7 @@
 import { Box, CardMedia, Container, Typography } from "@mui/material";
 
 export default function PortfoliePage() {
-  const isMobile = window.innerWidth <= 670;
+  const isMobile = window.innerWidth <= 820;
   return (
     <Container
       sx={{
@@ -18,12 +18,10 @@ export default function PortfoliePage() {
           paddingTop: 2,
         }}
       >
-        <Box>
+        <Box sx={{ paddingX: 1 }}>
           <Typography margin={0} paddingTop={2}>
-            En kalender där du kan hantera din 'todos'-lista.
-          </Typography>
-          <Typography margin={0} paddingBottom={1}>
-            Vi integrerade även ett hjälpmedel som läser upp dina todos.
+            En kalender där du kan hantera din 'todos'-lista. Vi integrerade
+            även ett hjälpmedel som läser upp dina todos.
           </Typography>
         </Box>
 
@@ -39,7 +37,7 @@ export default function PortfoliePage() {
           }}
         />
       </Container>
-      <Typography margin={0} paddingBottom={2} paddingTop={2}>
+      <Typography margin={0} paddingBottom={2} paddingTop={2} paddingX={2}>
         En e-shop där man kan sälja samt hantera produkter.
       </Typography>
       <Container

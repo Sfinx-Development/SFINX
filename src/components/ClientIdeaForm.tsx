@@ -3,7 +3,7 @@ import { useCustomerContext } from "../contexts/customerContext";
 
 export default function ClientIdeaForm() {
   const { customer, setCustomer } = useCustomerContext();
-  const isMobile = window.innerWidth <= 670;
+  const isMobile = window.innerWidth <= 820;
   return (
     <Box
       display={"flex"}

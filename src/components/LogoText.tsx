@@ -1,7 +1,7 @@
 import { Box, CardMedia, Typography } from "@mui/material";
 
 export default function Logotext() {
-  const isMobile = window.innerWidth <= 670;
+  const isMobile = window.innerWidth <= 820;
   return (
     <div
       style={{
@@ -31,11 +31,32 @@ export default function Logotext() {
           position: "relative",
         }}
       >
-        {isMobile ? null : (
+        {isMobile ? (
           <video
             autoPlay
             loop
             muted
+            playsInline={true}
+            controls={false}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: -1,
+              opacity: 0.2,
+            }}
+          >
+            <source src="https://i.imgur.com/gndLLDE.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline={true}
+            controls={false}
             style={{
               position: "fixed",
               top: 0,
@@ -52,7 +73,7 @@ export default function Logotext() {
 
         <Box
           sx={{
-            maxWidth: isMobile ? "400px" : "800px",
+            maxWidth: isMobile ? "410px" : "800px",
             padding: "16px",
             textAlign: "center",
           }}
