@@ -46,33 +46,36 @@ export default function RootLayout() {
           <div style={{ display: "flex", alignItems: "center" }}>
             <RouterLink
               to="/"
-              color="#000000"
+              color="black"
               style={{
                 fontSize: isMobile ? 18 : 22,
                 margin: isMobile ? "5px" : "15px",
                 textDecoration: "none",
+                color: "black",
               }}
             >
               Start
             </RouterLink>
             <RouterLink
               to="/aboutus"
-              color="#000000"
+              color="black"
               style={{
                 fontSize: isMobile ? 18 : 22,
                 margin: isMobile ? "5px" : "15px",
                 textDecoration: "none",
+                color: "black",
               }}
             >
               Om oss
             </RouterLink>
             <RouterLink
               to="/portfolie"
-              color="#000000"
+              color="black"
               style={{
                 fontSize: isMobile ? 18 : 22,
                 margin: isMobile ? "5px" : "15px",
                 textDecoration: "none",
+                color: "black",
               }}
             >
               Portfolie
