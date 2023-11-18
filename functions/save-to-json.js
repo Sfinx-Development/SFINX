@@ -5,7 +5,10 @@ const saveToJSON = async (customer) => {
   try {
     // Skapa en textrepresentation av kunddata
     const customerJson = JSON.stringify(customer, null, 2);
-    const filePath = path.join(process.cwd(), "customerData.json");
+    const filePath = path.join(
+      process.env.LAMBDA_TASK_ROOT || process.cwd(),
+      "customerData.json"
+    );
     console.log("FILVÄG: ", filePath);
     // Kontrollera om filen är tom
     const fileContent = await fs.readFile(filePath, "utf-8");
