@@ -79,13 +79,19 @@ export default function ContactText() {
           }}
         >
           <Typography marginBottom={2} padding={0}>
-            Vi är två tjejer, Angelina och Elina, som snart är färdiga med vår
-            utbildning systemutvecklare.NET. Vi brinner för att både skapa
-            hemsidor och appar från början samt att gå in i befintliga projekt
-            och bygga på fler eller bättre lösningar.
+            Vi är två tjejer som snart är färdiga med vår utbildning
+            systemutvecklare.NET. Vi brinner för att både skapa hemsidor och
+            appar från början samt att gå in i befintliga projekt och bygga på
+            fler eller bättre lösningar.
           </Typography>
 
-          <Typography>Passa på nu för ett billigare pris!</Typography>
+          <Typography marginBottom={2} padding={0}>
+            Passa på nu för ett billigare pris!
+          </Typography>
+
+          <Typography>Välkommen till oss med din idé</Typography>
+
+          <Typography>Angelina & Elina</Typography>
         </Box>
       </div>
     </div>
