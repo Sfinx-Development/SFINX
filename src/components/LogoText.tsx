@@ -1,6 +1,7 @@
 import { Box, CardMedia, Typography } from "@mui/material";
 
 export default function Logotext() {
+  const isMobile = window.innerWidth <= 670;
   return (
     <div
       style={{
@@ -17,7 +18,7 @@ export default function Logotext() {
         sx={{
           margin: 0,
           padding: 0,
-          width: 500,
+          width: isMobile ? "200px" : "500px",
           height: "auto",
         }}
       />
@@ -47,7 +48,13 @@ export default function Logotext() {
           <source src="https://i.imgur.com/xtHSxkW.mp4" type="video/mp4" />
         </video>
 
-        <Box sx={{ maxWidth: "800px", padding: "16px", textAlign: "center" }}>
+        <Box
+          sx={{
+            maxWidth: isMobile ? "400px" : "800px",
+            padding: "16px",
+            textAlign: "center",
+          }}
+        >
           <Typography variant={"h6"} margin={0} padding={0}>
             Fokuserar på att skapa skräddarsydda hemsidor efter dina behov och
             önskemål. Vi erbjuder även konsulttjänster för dig som inte har en

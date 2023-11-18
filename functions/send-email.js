@@ -12,7 +12,6 @@ const transporter = nodemailer.createTransport({
 
 export const handler = async function (event) {
   try {
-    console.log("EMAIL_PASSWORD:", process.env.EMAIL_PASSWORD);
     console.log("Anrop mottaget till /api/send-email");
 
     // Läs data från request body
@@ -42,7 +41,7 @@ export const handler = async function (event) {
 
     console.log("FÖRE SKICKAR MAIL");
     const info = await transporter.sendMail(mailOptions);
-    console.log("EFTER SKICKAR MAIL", "Tid:");
+    console.log("EFTER SKICKAR MAIL");
 
     // Returnera svar
     return {

@@ -1,6 +1,7 @@
 import { Box, CardMedia, Typography } from "@mui/material";
 
 export default function ContactText() {
+  const isMobile = window.innerWidth <= 670;
   return (
     <div
       style={{
@@ -17,7 +18,7 @@ export default function ContactText() {
         sx={{
           margin: 0,
           padding: 0,
-          width: 500,
+          width: isMobile ? "200px" : "500px",
           height: "auto",
         }}
       />
@@ -47,7 +48,13 @@ export default function ContactText() {
           <source src="https://i.imgur.com/xtHSxkW.mp4" type="video/mp4" />
         </video>
 
-        <Box sx={{ maxWidth: "800px", padding: "16px", textAlign: "center" }}>
+        <Box
+          sx={{
+            maxWidth: isMobile ? "400px" : "800px",
+            padding: "16px",
+            textAlign: "center",
+          }}
+        >
           <Typography variant={"h6"} margin={0} padding={0}>
             Vi är två tjejer som snart är färdiga med vår
             systemutveckling-utbildning. Vi brinner för att både skapa hemsidor

@@ -7,6 +7,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 
 export default function RootLayout() {
+  const isMobile = window.innerWidth <= 670;
   return (
     <div
       style={{
@@ -23,6 +24,7 @@ export default function RootLayout() {
           justifyContent: "space-between",
           backgroundColor: "white",
           position: "relative",
+          width: "100%",
         }}
       >
         <Toolbar
@@ -35,14 +37,19 @@ export default function RootLayout() {
           <img
             src="https://i.imgur.com/EUZnDj3.png"
             alt="logo"
-            style={{ width: 170, height: "auto" }}
+            style={{
+              height: "auto",
+              width: isMobile ? "100px" : "170px",
+            }}
           />
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link
               href="/"
               color="#000000"
-              fontSize={22}
-              style={{ margin: " 15px" }}
+              style={{
+                fontSize: isMobile ? 18 : 22,
+                margin: isMobile ? "5px" : "15px",
+              }}
               underline="none"
             >
               Start
@@ -50,8 +57,10 @@ export default function RootLayout() {
             <Link
               href="aboutus"
               color="#000000"
-              fontSize={22}
-              style={{ margin: " 15px" }}
+              style={{
+                fontSize: isMobile ? 18 : 22,
+                margin: isMobile ? "5px" : "15px",
+              }}
               underline="none"
             >
               Om oss
@@ -68,8 +77,10 @@ export default function RootLayout() {
             <Link
               href="portfolie"
               color="#000000"
-              fontSize={22}
-              style={{ margin: " 15px" }}
+              style={{
+                fontSize: isMobile ? 18 : 22,
+                margin: isMobile ? "5px" : "15px",
+              }}
               underline="none"
             >
               Portfolie

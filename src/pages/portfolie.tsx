@@ -1,6 +1,7 @@
 import { Box, CardMedia, Container, Typography } from "@mui/material";
 
 export default function PortfoliePage() {
+  const isMobile = window.innerWidth <= 670;
   return (
     <Container
       sx={{
@@ -12,7 +13,7 @@ export default function PortfoliePage() {
       <Container
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
           paddingTop: 2,
         }}
@@ -33,7 +34,7 @@ export default function PortfoliePage() {
           sx={{
             margin: 0,
             padding: 0,
-            width: 500,
+            width: isMobile ? 300 : 500,
             height: "auto",
           }}
         />
@@ -44,7 +45,7 @@ export default function PortfoliePage() {
       <Container
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
         }}
       >
@@ -55,7 +56,7 @@ export default function PortfoliePage() {
           sx={{
             margin: 0,
             paddingBottom: 2,
-            width: 500,
+            width: isMobile ? 300 : 500,
             height: "auto",
           }}
         />
@@ -67,7 +68,7 @@ export default function PortfoliePage() {
           sx={{
             margin: 0,
             paddingBottom: 2,
-            width: 500,
+            width: isMobile ? 300 : 500,
             height: "auto",
           }}
         />
