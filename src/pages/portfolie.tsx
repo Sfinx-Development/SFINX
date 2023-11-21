@@ -1,4 +1,4 @@
-import { Box, CardMedia, Container, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Container, Typography } from "@mui/material";
 
 export default function PortfoliePage() {
   const isMobile = window.innerWidth <= 820;
@@ -10,16 +10,17 @@ export default function PortfoliePage() {
         alignItems: "center",
       }}
     >
-      <Container
+      <Card
         sx={{
           display: "flex",
           flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
-          paddingTop: 2,
+          marginTop: 2,
+          paddingBottom: 2,
         }}
       >
         <Box sx={{ paddingX: 1 }}>
-          <Typography margin={0} paddingTop={2}>
+          <Typography margin={0} paddingTop={2} fontSize={isMobile ? 15 : 20}>
             En kalender där du kan hantera din 'todos'-lista. Vi integrerade
             även ett hjälpmedel som läser upp dina todos.
           </Typography>
@@ -36,17 +37,26 @@ export default function PortfoliePage() {
             height: "auto",
           }}
         />
-      </Container>
-      <Typography margin={0} paddingBottom={2} paddingTop={2} paddingX={2}>
-        En e-shop där man kan sälja samt hantera produkter.
-      </Typography>
-      <Container
+      </Card>
+
+      <Card
         sx={{
           display: "flex",
           flexDirection: isMobile ? "column" : "row",
           alignItems: "center",
+          marginTop: 2,
+          paddingBottom: 2,
         }}
       >
+        <Typography
+          margin={0}
+          paddingBottom={2}
+          paddingTop={2}
+          paddingX={2}
+          fontSize={isMobile ? 15 : 20}
+        >
+          En e-shop där man kan sälja samt hantera produkter.
+        </Typography>
         <CardMedia
           component="img"
           image="https://i.imgur.com/Y0HEktb.png"
@@ -70,7 +80,7 @@ export default function PortfoliePage() {
             height: "auto",
           }}
         />
-      </Container>
+      </Card>
     </Container>
   );
 }
