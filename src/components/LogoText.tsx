@@ -1,28 +1,20 @@
-import { Box, CardMedia, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import DesktopMacIcon from "@mui/icons-material/DesktopMac";
+import PeopleIcon from "@mui/icons-material/People";
 
 export default function Logotext() {
   const isMobile = window.innerWidth <= 820;
+
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        margin: 15,
         alignItems: "center",
+        margin: 15,
       }}
     >
-      <CardMedia
-        component="img"
-        image="https://i.imgur.com/UNlANF3.png"
-        alt="logo"
-        sx={{
-          margin: 0,
-          padding: 0,
-          width: isMobile ? "200px" : "500px",
-          height: "auto",
-        }}
-      />
-
       <div
         style={{
           display: "flex",
@@ -71,20 +63,72 @@ export default function Logotext() {
           </video>
         )}
 
-        <Box
-          sx={{
+        <div
+          style={{
             maxWidth: isMobile ? "410px" : "800px",
             padding: "16px",
             textAlign: "center",
           }}
         >
-          <Typography variant={"h6"} margin={0} padding={0}>
-            Fokuserar på att skapa skräddarsydda hemsidor efter dina behov och
-            önskemål. Vi erbjuder även konsulttjänster för dig som inte har en
-            färdig plan för din hemsida, där vi designar och utformar en plan
-            tillsammans.
-          </Typography>
-        </Box>
+          <div
+            style={{
+              position: "relative",
+              textAlign: "center",
+              maxWidth: "800px",
+              padding: "16px",
+              backgroundColor: "transparent",
+              borderRadius: "10px",
+              boxShadow: "transparent",
+            }}
+          >
+            <Typography variant="h4" marginY={2} fontWeight="bold">
+              LUNA STACK
+            </Typography>
+            <Typography fontSize={20} margin={0} marginBottom={2}>
+              På Luna Stack skapar vi innovativa och unika IT-lösningar med
+              fokus på fullstack-utveckling, förverkligar kundernas idéer från
+              början till slut.
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "40px",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <LightbulbIcon sx={{ fontSize: 48 }} />
+                <Typography variant="body1">Idéer</Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <DesktopMacIcon sx={{ fontSize: 48 }} />
+                <Typography variant="body1">Utveckling</Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <PeopleIcon sx={{ fontSize: 48 }} />
+                <Typography variant="body1">Kundrelation</Typography>
+              </Box>
+            </Box>
+          </div>
+        </div>
       </div>
     </div>
   );

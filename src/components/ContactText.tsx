@@ -1,99 +1,87 @@
-import { Box, CardMedia, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function ContactText() {
   const isMobile = window.innerWidth <= 820;
+
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: "flex",
         flexDirection: "column",
-        margin: 15,
         alignItems: "center",
+        margin: 10,
       }}
     >
-      <CardMedia
-        component="img"
-        image="https://i.imgur.com/UNlANF3.png"
-        alt="logo"
+      <Box
         sx={{
-          margin: 0,
-          padding: 0,
-          width: isMobile ? "200px" : "500px",
-          height: "auto",
-        }}
-      />
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
           position: "relative",
+          textAlign: "center",
+          maxWidth: "800px",
+          padding: "16px",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          borderRadius: "10px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
-        {isMobile ? (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline={true}
-            controls={false}
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              zIndex: -1,
-              opacity: 0.3,
-            }}
-          >
-            <source src="https://i.imgur.com/gndLLDE.mp4" type="video/mp4" />
-          </video>
-        ) : (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline={true}
-            controls={false}
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              zIndex: -1,
-              opacity: 0.2,
-            }}
-          >
-            <source src="https://i.imgur.com/xtHSxkW.mp4" type="video/mp4" />
-          </video>
-        )}
+        <Typography variant="h5" padding={1} gutterBottom>
+          Vi på Luna Stack brinner för innovation och framtid inom IT
+        </Typography>
+        <Typography variant="body1" padding={1} gutterBottom>
+          Vi sätter fokus på att skapa starka, smarta och säkra system för våra
+          kunder. Vi är två utvecklare med fullstackutbildning i grunden och
+          jobbar främst med programmeringsspråken C#, JAVA, JavaScript och
+          TypeScript. Ramverken vi jobbar med är React, Svelte, Angular, Grails
+          och .NET. Vi har störst fokus på databaser i MySQL och Firebase för
+          små och stora system.
+        </Typography>
 
-        <Box
-          sx={{
-            maxWidth: isMobile ? "400px" : "800px",
-            padding: "16px",
-            textAlign: "center",
+        <Typography variant="body1" padding={1} gutterBottom>
+          Att vara fullstackutvecklare innebär att vi skapar all mjukvara du som
+          kund önskar - en hemsida, webbshop, mobilapplikation eller varför inte
+          en funktion i ett redan etablerat system.
+        </Typography>
+
+        <Typography variant="body1" padding={1}>
+          Välkommen till oss med din idé
+        </Typography>
+        <Typography variant="body1" padding={1}>
+          Angelina & Elina
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+          opacity: 0.3,
+        }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline={true}
+          controls={false}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
           }}
         >
-          <Typography marginBottom={2} padding={0}>
-            Vi är två tjejer som snart är färdiga med vår utbildning
-            systemutvecklare.NET. Vi brinner för att både skapa hemsidor och
-            appar från början samt att gå in i befintliga projekt och bygga på
-            fler eller bättre lösningar.
-          </Typography>
-
-          <Typography marginBottom={2} padding={0}>
-            Passa på nu för ett billigare pris!
-          </Typography>
-
-          <Typography>Välkommen till oss med din idé</Typography>
-
-          <Typography>Angelina & Elina</Typography>
-        </Box>
-      </div>
-    </div>
+          <source
+            src={
+              isMobile
+                ? "https://i.imgur.com/gndLLDE.mp4"
+                : "https://i.imgur.com/xtHSxkW.mp4"
+            }
+            type="video/mp4"
+          />
+        </video>
+      </Box>
+    </Box>
   );
 }

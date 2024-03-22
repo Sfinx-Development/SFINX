@@ -1,11 +1,9 @@
-import { Outlet } from "react-router-dom";
-import { Box, AppBar, Toolbar, Link } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
+import { AppBar, Box, Link, Toolbar, Typography } from "@mui/material";
+import { Outlet, Link as RouterLink } from "react-router-dom";
 // import MenuIcon from "@mui/icons-material/Menu";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import EmailIcon from "@mui/icons-material/Email";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import EmailIcon from "@mui/icons-material/Email";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 export default function RootLayout() {
   const isMobile = window.innerWidth <= 820;
@@ -35,14 +33,18 @@ export default function RootLayout() {
             alignItems: "center",
           }}
         >
-          <img
-            src="https://i.imgur.com/EUZnDj3.png"
-            alt="logo"
+          <RouterLink
+            to="/"
+            color="black"
             style={{
-              height: "auto",
-              width: isMobile ? "100px" : "170px",
+              fontSize: isMobile ? 18 : 22,
+              margin: isMobile ? "5px" : "15px",
+              textDecoration: "none",
+              color: "black",
             }}
-          />
+          >
+            <Typography variant="h4">LUNA STACK</Typography>
+          </RouterLink>
           <div style={{ display: "flex", alignItems: "center" }}>
             <RouterLink
               to="/"
@@ -54,7 +56,7 @@ export default function RootLayout() {
                 color: "black",
               }}
             >
-              Start
+              <Typography>Hem</Typography>
             </RouterLink>
             <RouterLink
               to="/aboutus"
@@ -66,7 +68,7 @@ export default function RootLayout() {
                 color: "black",
               }}
             >
-              Om oss
+              <Typography>Om oss</Typography>
             </RouterLink>
             <RouterLink
               to="/portfolie"
@@ -78,7 +80,7 @@ export default function RootLayout() {
                 color: "black",
               }}
             >
-              Portfolie
+              <Typography>Portfolie</Typography>
             </RouterLink>
           </div>
         </Toolbar>
@@ -140,18 +142,15 @@ export default function RootLayout() {
           }}
         >
           <Link
-            href="https://www.instagram.com/sfinxdevelopment"
+            href="https://www.instagram.com/sfynxdevelopment"
             target="_blank"
           >
             <InstagramIcon fontSize="medium" />
           </Link>
-          <Link href="mailto:sfinxdevelopment@gmail.com" target="_blank">
+          <Link href="mailto:sfynxdevelopment@gmail.com" target="_blank">
             <EmailIcon fontSize="medium" />
           </Link>
-          <Link href="https://www.instagram.com" target="_blank">
-            <AccountCircleIcon fontSize="medium" />
-          </Link>
-          <Link href="https://www.instagram.com" target="_blank">
+          <Link href="/" target="_blank">
             <AdminPanelSettingsIcon fontSize="medium" />
           </Link>
         </Box>
