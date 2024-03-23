@@ -28,6 +28,7 @@ export default function Logotext() {
         flexDirection: "column",
         alignItems: "center",
         margin: 15,
+        width: "100%",
       }}
     >
       <div
@@ -36,6 +37,7 @@ export default function Logotext() {
           flexDirection: "column",
           alignItems: "center",
           position: "relative",
+          width: "100%",
         }}
       >
         {isMobile ? (
@@ -84,7 +86,7 @@ export default function Logotext() {
             padding: "16px",
             textAlign: "center",
             transition: "opacity 0.5s ease",
-            opacity: scrollY > 50 ? 0.5 : 1, // Just an example, adjust as needed
+            opacity: scrollY > 50 ? 0.5 : 1,
           }}
         >
           <div
@@ -92,13 +94,13 @@ export default function Logotext() {
               position: "relative",
               textAlign: "center",
               maxWidth: "800px",
-              padding: "40px",
+              padding: isMobile ? "10px" : "40px",
               backgroundColor: "transparent",
               borderRadius: "10px",
               boxShadow: "transparent",
             }}
           >
-            <Typography variant="h4" marginY={2} fontWeight="500">
+            <Typography variant="h4" marginY={3} fontWeight="500">
               LUNA STACK
             </Typography>
             <Typography
@@ -110,47 +112,50 @@ export default function Logotext() {
               fokus på fullstack-utveckling, förverkligar kundernas idéer från
               början till slut.
             </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                gap: "40px",
-                marginTop: 2,
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <LightbulbIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
-                <Typography variant="body1">Idéer</Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <DesktopMacIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
-                <Typography variant="body1">Utveckling</Typography>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <PeopleIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
-                <Typography variant="body1">Kundrelation</Typography>
-              </Box>
-            </Box>
           </div>
         </div>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: isMobile ? "20px" : "40px",
+            marginBottom: isMobile ? 4 : 2,
+            marginTop: isMobile ? 1 : 2,
+            width: "100%",
+            opacity: scrollY > 100 ? 0.5 : 1,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <LightbulbIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
+            <Typography variant="body1">Idéer</Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <DesktopMacIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
+            <Typography variant="body1">Utveckling</Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <PeopleIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
+            <Typography variant="body1">Kundrelation</Typography>
+          </Box>
+        </Box>
       </div>
     </div>
   );
