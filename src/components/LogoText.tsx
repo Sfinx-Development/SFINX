@@ -1,9 +1,24 @@
+import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import DesktopMacIcon from "@mui/icons-material/DesktopMac";
 import PeopleIcon from "@mui/icons-material/People";
 
 export default function Logotext() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const isMobile = window.innerWidth <= 820;
 
   return (
@@ -68,6 +83,8 @@ export default function Logotext() {
             maxWidth: isMobile ? "410px" : "800px",
             padding: "16px",
             textAlign: "center",
+            transition: "opacity 0.5s ease",
+            opacity: scrollY > 50 ? 0.5 : 1, // Just an example, adjust as needed
           }}
         >
           <div
@@ -75,16 +92,20 @@ export default function Logotext() {
               position: "relative",
               textAlign: "center",
               maxWidth: "800px",
-              padding: "16px",
+              padding: "40px",
               backgroundColor: "transparent",
               borderRadius: "10px",
               boxShadow: "transparent",
             }}
           >
-            <Typography variant="h4" marginY={2} fontWeight="bold">
+            <Typography variant="h4" marginY={2} fontWeight="500">
               LUNA STACK
             </Typography>
-            <Typography fontSize={20} margin={0} marginBottom={2}>
+            <Typography
+              fontSize={isMobile ? 15 : 20}
+              margin={0}
+              marginBottom={2}
+            >
               På Luna Stack skapar vi innovativa och unika IT-lösningar med
               fokus på fullstack-utveckling, förverkligar kundernas idéer från
               början till slut.
@@ -94,6 +115,7 @@ export default function Logotext() {
                 display: "flex",
                 justifyContent: "center",
                 gap: "40px",
+                marginTop: 2,
               }}
             >
               <Box
@@ -103,7 +125,7 @@ export default function Logotext() {
                   alignItems: "center",
                 }}
               >
-                <LightbulbIcon sx={{ fontSize: 48 }} />
+                <LightbulbIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
                 <Typography variant="body1">Idéer</Typography>
               </Box>
               <Box
@@ -113,7 +135,7 @@ export default function Logotext() {
                   alignItems: "center",
                 }}
               >
-                <DesktopMacIcon sx={{ fontSize: 48 }} />
+                <DesktopMacIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
                 <Typography variant="body1">Utveckling</Typography>
               </Box>
               <Box
@@ -123,7 +145,7 @@ export default function Logotext() {
                   alignItems: "center",
                 }}
               >
-                <PeopleIcon sx={{ fontSize: 48 }} />
+                <PeopleIcon sx={{ fontSize: isMobile ? 35 : 48 }} />
                 <Typography variant="body1">Kundrelation</Typography>
               </Box>
             </Box>

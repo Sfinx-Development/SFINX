@@ -43,7 +43,7 @@ export default function RootLayout() {
               color: "black",
             }}
           >
-            <Typography variant="h4">LUNA STACK</Typography>
+            <Typography variant={isMobile ? "h6" : "h4"}>LUNA STACK</Typography>
           </RouterLink>
           <div style={{ display: "flex", alignItems: "center" }}>
             <RouterLink

@@ -9,7 +9,7 @@ export default function ContactText() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        margin: 10,
+        margin: isMobile ? 3 : 10,
       }}
     >
       <Box
@@ -17,13 +17,13 @@ export default function ContactText() {
           position: "relative",
           textAlign: "center",
           maxWidth: "800px",
-          padding: "16px",
+          padding: isMobile ? "10px" : "16px",
           backgroundColor: "rgba(255, 255, 255, 0.9)",
           borderRadius: "10px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <Typography variant="h5" padding={1} gutterBottom>
+        <Typography variant={isMobile ? "h6" : "h5"} padding={1} gutterBottom>
           Vi på Luna Stack brinner för innovation och framtid inom IT
         </Typography>
         <Typography variant="body1" padding={1} gutterBottom>
