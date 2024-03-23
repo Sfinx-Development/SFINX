@@ -17,7 +17,7 @@ export default function PortfolieCard({ portfolie }: Props) {
   return (
     <Card
       sx={{
-        margin: 10,
+        margin: isMobile ? 3 : 10,
         borderRadius: 16,
         overflow: "hidden",
         boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",
