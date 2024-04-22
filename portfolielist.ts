@@ -35,7 +35,7 @@ export const portfolieList: PortfolieInterface[] = [
     id: 5,
     name: "CY Virtual Workplace",
     type: "E service",
-    url: ["https://i.imgur.com/kasditC.png", "https://i.imgur.com/foyOhB3.png"],
+    url: ["https://i.imgur.com/a6wGen3.png", "https://i.imgur.com/foyOhB3.png"],
     description:
       "En arbetsplats remote för alla typer av team och projektarbete!",
   },
