@@ -43,7 +43,7 @@ export default function RootLayout() {
               color: "black",
             }}
           >
-            <Typography variant={isMobile ? "h6" : "h4"}>LUNA STACK</Typography>
+            <Typography variant={isMobile ? "h6" : "h4"}>ZEROETT</Typography>
           </RouterLink>
           <div style={{ display: "flex", alignItems: "center" }}>
             <RouterLink
@@ -141,13 +141,10 @@ export default function RootLayout() {
             },
           }}
         >
-          <Link
-            href="https://www.instagram.com/sfynxdevelopment"
-            target="_blank"
-          >
+          <Link href="https://www.instagram.com/zeroettab" target="_blank">
             <InstagramIcon fontSize="medium" />
           </Link>
-          <Link href="mailto:sfynxdevelopment@gmail.com" target="_blank">
+          <Link href="mailto:zeroettab@gmail.com" target="_blank">
             <EmailIcon fontSize="medium" />
           </Link>
           <Link href="/" target="_blank">

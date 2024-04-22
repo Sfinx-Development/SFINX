@@ -53,7 +53,7 @@ export default function FormStepper(props: Props) {
     }
     const body = `${customerName}\n${customerEmail}\n${customerPhone}\n${customerAddress}\n${customerPurpose}\n${customerTargetGroup}\n${customerApp}\n${customerBudget}\n${customerExtra}\n${isCompany}\n${companyName}\n${companyDescription}`;
 
-    const defaultEmail = "sfynxdevelopment@gmail.com";
+    const defaultEmail = "zeroettab@gmail.com";
     const mailtoLink = `mailto:${defaultEmail}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;

@@ -24,7 +24,7 @@ export default function ContactText() {
         }}
       >
         <Typography variant={isMobile ? "h6" : "h5"} padding={1} gutterBottom>
-          Vi på Luna Stack brinner för innovation och framtid inom IT
+          Vi på ZEROETT brinner för innovation och framtid inom IT
         </Typography>
         <Typography variant="body1" padding={1} gutterBottom>
           Vi sätter fokus på att skapa starka, smarta och säkra system för våra
