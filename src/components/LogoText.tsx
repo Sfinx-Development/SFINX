@@ -101,16 +101,16 @@ export default function Logotext() {
             }}
           >
             <Typography variant="h4" marginY={3} fontWeight="500">
-             ZEROETT
+              ZEROETT
             </Typography>
             <Typography
               fontSize={isMobile ? 15 : 20}
               margin={0}
               marginBottom={2}
             >
-              På ZEROETT skapar vi innovativa och unika IT-lösningar med
-              fokus på fullstack-utveckling, förverkligar kundernas idéer från
-              början till slut.
+              Vi skapar innovativa och unika IT-lösningar med fokus på
+              fullstack-utveckling, förverkligar kundernas idéer från början
+              till slut.
             </Typography>
           </div>
         </div>

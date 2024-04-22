@@ -23,28 +23,35 @@ export default function ContactText() {
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <Typography variant={isMobile ? "h6" : "h5"} padding={1} gutterBottom>
-          Vi på ZEROETT brinner för innovation och framtid inom IT
+        <Typography
+          variant={isMobile ? "h6" : "h5"}
+          padding={isMobile ? 1 : 2}
+          gutterBottom
+          color="primary" // Använd primärfärg för att sticka ut
+        >
+          Välkommen till ZEROETT
         </Typography>
-        <Typography variant="body1" padding={1} gutterBottom>
-          Vi sätter fokus på att skapa starka, smarta och säkra system för våra
-          kunder. Vi är två utvecklare med fullstackutbildning i grunden och
-          jobbar främst med programmeringsspråken C#, JAVA, JavaScript och
-          TypeScript. Ramverken vi jobbar med är React, Svelte, Angular, Grails
-          och .NET. Vi har störst fokus på databaser i MySQL och Firebase för
-          små och stora system.
-        </Typography>
-
-        <Typography variant="body1" padding={1} gutterBottom>
-          Att vara fullstackutvecklare innebär att vi skapar all mjukvara du som
-          kund önskar - en hemsida, webbshop, mobilapplikation eller varför inte
-          en funktion i ett redan etablerat system.
+        <Typography variant="body1" padding={isMobile ? 1 : 2} gutterBottom>
+          Vi fokuserar på att skapa starka, smarta och säkra system för våra
+          kunder. Vårt team består av två fullstackutvecklare med expertis i C#,
+          JAVA, JavaScript, och TypeScript. Vi använder ramverk som React,
+          Svelte, Angular, Grails och .NET. Vår specialitet ligger i MySQL och
+          Firebase för små och stora system.
         </Typography>
 
-        <Typography variant="body1" padding={1}>
-          Välkommen till oss med din idé
+        <Typography variant="body1" padding={isMobile ? 1 : 2} gutterBottom>
+          Som fullstackutvecklare tar vi hand om alla dina mjukvarubehov - från
+          hemsidor och webbshoppar till mobilapplikationer och funktioner i
+          redan etablerade system.
+        </Typography>
+
+        <Typography variant="body1" padding={isMobile ? 1 : 2}>
+          Dela din idé med oss idag!
         </Typography>
         <Typography variant="body1" padding={1}>
+          Med vänliga hälsningar,
+        </Typography>
+        <Typography variant="body1" padding={1} fontWeight="bold">
           Angelina & Elina
         </Typography>
       </Box>

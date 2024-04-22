@@ -1,11 +1,12 @@
 import { AppBar, Box, Link, Toolbar, Typography } from "@mui/material";
-import { Outlet, Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 // import MenuIcon from "@mui/icons-material/Menu";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import EmailIcon from "@mui/icons-material/Email";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { ReactNode } from "react";
 
-export default function RootLayout() {
+const RootLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
   const isMobile = window.innerWidth <= 820;
   return (
     <div
@@ -56,7 +57,7 @@ export default function RootLayout() {
                 color: "black",
               }}
             >
-              <Typography>Hem</Typography>
+              <Typography>HEM</Typography>
             </RouterLink>
             <RouterLink
               to="/aboutus"
@@ -68,7 +69,7 @@ export default function RootLayout() {
                 color: "black",
               }}
             >
-              <Typography>Om oss</Typography>
+              <Typography>OM OSS</Typography>
             </RouterLink>
             <RouterLink
               to="/portfolie"
@@ -80,7 +81,7 @@ export default function RootLayout() {
                 color: "black",
               }}
             >
-              <Typography>Portfolie</Typography>
+              <Typography>PORTFOLIO</Typography>
             </RouterLink>
           </div>
         </Toolbar>
@@ -118,7 +119,7 @@ export default function RootLayout() {
           position: "relative",
         }}
       >
-        <Outlet />
+        {children}
       </main>
 
       <footer style={{ backgroundColor: "black", flex: "flex" }}>
@@ -154,4 +155,6 @@ export default function RootLayout() {
       </footer>
     </div>
   );
-}
+};
+
+export default RootLayout;

@@ -28,7 +28,7 @@ export default function PortfolieCard({ portfolie }: Props) {
         image={portfolie.url[0]} // Assuming the first URL is the main image
         alt="portfolio"
         sx={{
-          height: isMobile ? 200 : 400,
+          height: isMobile ? 200 : 300,
           objectFit: "cover",
         }}
       />
@@ -61,7 +61,7 @@ export default function PortfolieCard({ portfolie }: Props) {
               sx={{
                 marginLeft: index > 0 ? 2 : 0,
                 width: isMobile ? 120 : 160,
-                height: isMobile ? 80 : 120,
+                height: isMobile ? 80 : 100,
                 objectFit: "contain",
               }}
             />

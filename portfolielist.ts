@@ -6,7 +6,7 @@ export const portfolieList: PortfolieInterface[] = [
     name: "Webshop",
     type: "Webshop",
     url: ["https://i.imgur.com/Y0HEktb.png", "https://i.imgur.com/KSbsIhH.png"],
-    description: " En e-shop där man kan sälja samt hantera produkter.",
+    description: "En e-shop där man kan sälja samt hantera produkter.",
   },
   {
     id: 2,
@@ -30,5 +30,13 @@ export const portfolieList: PortfolieInterface[] = [
     type: "Mobile app",
     url: ["https://i.imgur.com/kW51MSz.jpg"],
     description: "Se om det finns soliga platser nära dig just nu!",
+  },
+  {
+    id: 5,
+    name: "CY Virtual Workplace",
+    type: "E service",
+    url: ["https://i.imgur.com/kasditC.png", "https://i.imgur.com/foyOhB3.png"],
+    description:
+      "En arbetsplats remote för alla typer av team och projektarbete!",
   },
 ];
