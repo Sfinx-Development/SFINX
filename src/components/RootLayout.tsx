@@ -44,7 +44,12 @@ const RootLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
               color: "black",
             }}
           >
-            <Typography variant={isMobile ? "h6" : "h4"}>ZEROETT</Typography>
+            <Typography
+              variant={isMobile ? "h6" : "h4"}
+              sx={{ letterSpacing: "0.1em" }}
+            >
+              ZEROETT
+            </Typography>
           </RouterLink>
           <div style={{ display: "flex", alignItems: "center" }}>
             <RouterLink

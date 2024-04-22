@@ -100,7 +100,12 @@ export default function Logotext() {
               boxShadow: "transparent",
             }}
           >
-            <Typography variant="h4" marginY={3} fontWeight="500">
+            <Typography
+              variant="h4"
+              marginY={3}
+              fontWeight="500"
+              sx={{ letterSpacing: "0.1em" }}
+            >
               ZEROETT
             </Typography>
             <Typography
